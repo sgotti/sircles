@@ -11,17 +11,17 @@ env:
   - TARGET=amd64
   - TARGET=arm64
 
-addons:
-  apt:
-    packages:
-    - ldap-utils
-    - slapd
+###addons:
+###  apt:
+###    packages:
+###    - ldap-utils
+###    - slapd
 
 install:
   - . $HOME/.nvm/nvm.sh
+  - nvm ls-remote 8
   - nvm install stable
   - nvm use stable
-  - npm install -g gulp
 
 script:
   # build with webbundle so we'll trigger all the ui build process
